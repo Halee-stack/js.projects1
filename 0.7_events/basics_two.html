@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics-TWO</title>
+</head>
+<body>
+    <h1>Basics of html</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    //setTimeout(function(){
+       // console.log("Haleema");
+    //}, 3000)
+    // setTimeout means that it is given this much time and then it will print the function for only one time. 
+
+    const sayHaleema = function(){
+        console.log("Haleema");
+    }
+    
+    const changeText =function(){
+        document.querySelector('h1').
+        innerHTML = "The basic learning of JavaScript"
+    }
+
+    
+
+    const changeThis = setTimeout(changeText, 3000) // handler... needs reference.
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout("changeMe")
+        console.log("STOPPED")// when clicked stop button .. it will work and show stopped in the console.
+    })
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics-THREE</title>
+</head>
+<body>
+    <h1>The Basics of HTML-Three</h1>
+    
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+    
+</body>
+<script>
+   // setInterval(function(){
+      //  console.log("Haleema", Date.now());
+    //}, 1000) // with this method, it will kepp printing the name and won't be able to stop so for that
+
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+    const intervalId = setInterval(sayDate, 1000, "Hey there!")
+
+    clearInterval(intervalId) /// this will pause and stop printing.. if this ist present then the code will keep printing and won't stop.
+
+
+</script>
+</html>
