@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events of HTML</title>
+</head>
+<body style="background-color: lightcyan;">
+    <h2 style="color: orangered;">FLOWERS</h2>
+    <div>
+        <ul id="Floral visuals">
+            <li><img height="200px" width="200px" id="pink" src="https://images.pexels.com/photos/19629031/pexels-photo-19629031.jpeg" alt="pink flowers"></li>
+
+            <li><img height="200px" width="200px" id="purple" src="https://images.pexels.com/photos/15021289/pexels-photo-15021289.jpeg" alt="purple flowers"></li>
+
+            <li><img height="200px" width="200px" id="orange" src="https://images.pexels.com/photos/36759448/pexels-photo-36759448.jpeg" alt="orange flowers"></li>
+
+            <li><img height="200px" width="200px" id="white" src="https://images.pexels.com/photos/35526520/pexels-photo-35526520.jpeg" alt="white flowers"></li>
+
+            <li><img height="200px" width="200px" id="yellow" src="https://images.pexels.com/photos/34643014/pexels-photo-34643014.jpeg" alt="yellow flowers"></li>
+
+            <li><a style="color: darkblue" href="https://google.com" id="google">Google</a></li>
+        
+        </ul>
+     </div>
+</body>
+<script>
+
+
+/// Event propagation
+//capturing event.. happens from outward to inward
+//bubbling event... happnes from inner to outward
+// the default values are false.. so its okay if we do not write the thirrd argument False.
+///sometimes we do not want event propagation in a sense that it passes to other functions so inner and outer function behave separately. so there we use stopPropagation().
+//event.stopPropagation() is used to stop an event from moving through the DOM tree.
+//In other words, it prevents the event from going:
+//up (bubbling phase)
+//or down (capturing phase, if used carefully)
+
+
+    //document.getElementById('Floral visuals').addEventListener('click', function(e){ 
+       // console.log("floral visuals was clicked");
+    //}, false)
+
+    //document.getElementById('orange').addEventListener('click', function(e){ 
+       // console.log("orange was clicked");
+        //e.stopPropagation()
+    //}, false)
+
+
+   // document.getElementById('google').addEventListener('click', function(e){
+       // e.preventDefault();
+       // e.stopPropagation()
+      //  console.log("google was clicked");
+    //}, false)
+    //event.preventDefault() is used when we want to stop the browser's default behavior for an event.
+
+    document.querySelector('#Floral visuals').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+
+</script>
+</html>
